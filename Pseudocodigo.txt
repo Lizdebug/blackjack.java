@@ -1,0 +1,76 @@
+Algoritmo Blackjack
+
+    // Variables globales
+    Definir baraja Como Vector
+    Definir puntosJugador, puntosCrupier Como Entero
+
+    // Subproceso para inicializar la baraja
+    SubProceso InicializarBaraja()
+        // Llenar la baraja con todas las cartas (13 valores * 4 palos)
+        // ... (implementación detallada)
+    Fin SubProceso
+
+    // Subproceso para mezclar la baraja
+    SubProceso MezclarBaraja()
+        // Utilizar un algoritmo de mezcla aleatoria (por ejemplo, Fisher-Yates)
+        // ... (implementación detallada)
+    Fin SubProceso
+
+    // Subproceso para dar una carta
+    SubProceso DarCarta(jugador)
+        // Sacar la primera carta de la baraja y dársela al jugador
+        // Actualizar el puntaje del jugador
+        // ... (implementación detallada)
+    Fin SubProceso
+
+    // Subproceso para calcular el valor de una mano
+    SubProceso CalcularValorMano(mano)
+        // Sumar los valores de las cartas en la mano
+        // Considerar el valor especial de los ases (1 u 11)
+        // ... (implementación detallada)
+    Fin SubProceso
+
+    // Subproceso para el turno del jugador
+    SubProceso TurnoJugador()
+        // Dar dos cartas iniciales al jugador
+        // Mientras el jugador quiera pedir carta y no se haya pasado de 21:
+        //     Dar una carta al jugador
+        //     Mostrar el puntaje del jugador
+    Fin SubProceso
+
+    // Subproceso para el turno del crupier
+    SubProceso TurnoCrupier()
+        // Dar dos cartas iniciales al crupier
+        // Mientras el puntaje del crupier sea menor a 17:
+        //     Dar una carta al crupier
+    Fin SubProceso
+
+    // Subproceso principal
+    Inicio
+        InicializarBaraja()
+        MezclarBaraja()
+
+        // Repite mientras el jugador quiera seguir jugando
+        Repetir
+            TurnoJugador()
+            TurnoCrupier()
+
+            // Determinar el ganador y mostrar el resultado
+            Si puntosJugador > 21 Entonces
+                Escribir "Jugador se pasó de 21. Crupier gana."
+            SiNo Si puntosCrupier > 21 Entonces
+                Escribir "Crupier se pasó de 21. Jugador gana."
+            SiNo
+                Si puntosJugador > puntosCrupier Entonces
+                    Escribir "Jugador gana."
+                SiNo Si puntosCrupier > puntosJugador Entonces
+                    Escribir "Crupier gana."
+                SiNo
+                    Escribir "Empate."
+                FinSi
+            FinSi
+
+        Hasta Que jugador quiera salir
+    Fin
+
+FinAlgoritmo
