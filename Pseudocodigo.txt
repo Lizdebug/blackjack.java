@@ -1,5 +1,6 @@
 Nombre del Algoritmo: Blackjack
 
+
     //Definicion de variables
     Definir baraja Como Vector
     Definir puntosJugador, puntosCrupier Como Entero
