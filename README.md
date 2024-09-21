@@ -1,6 +1,7 @@
 # blackjack.cpp
-Integrantes del equipo 
-AngelGarcia Almeyda
+Integrantes del equipo H
+
+Angel Garcia Almeyda
 
 Juan Carlos Escamilla Carballo
 
@@ -10,4 +11,4 @@ Jesús David Tejeda Hernández
 
 Lizbeth Guadalupe Segundo Cienega
 
-a game in c++
+Descripción: Realizaremos el pseudocódigo del juego Blackjack con las herramientas que vimos en clase, usaremos C++. 
