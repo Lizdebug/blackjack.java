@@ -1,33 +1,77 @@
 Nombre del Algoritmo: Blackjack
 
-    // Variables globales
+    //Definicion de variables
     Definir baraja Como Vector
     Definir puntosJugador, puntosCrupier Como Entero
 
     // Subproceso para inicializar la baraja
     SubProceso InicializarBaraja()
         // Llenar la baraja con todas las cartas (13 valores * 4 palos)
-        // ... (implementación detallada)
-    Fin SubProceso
+    Definir baraja Como Lista
+    Definir palos Como Lista {Corazones, Diamantes, Trébol, Picas}
+    Definir valores Como Lista {As, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K}
+
+    Para cada palo En palos Hacer
+        Para cada valor En valores Hacer
+            Agregar (palo, valor) a baraja
+        FinPara
+    FinPara
+Fin SubProceso
 
     // Subproceso para mezclar la baraja
     SubProceso MezclarBaraja()
         // Utilizar un algoritmo de mezcla aleatoria (por ejemplo, Fisher-Yates)
-        // ... (implementación detallada)
+    Definir indiceAleatorio Como Entero
+    Definir cartaTemporal Como Carta
+
+    Para i Desde 0 Hasta tamaño(baraja) - 2 Hacer
+        indiceAleatorio <- un número aleatorio entre i y tamaño(baraja) - 1
+        // Intercambiar las cartas en los índices i e indiceAleatorio
+        cartaTemporal <- baraja[i]
+        baraja[i] <- baraja[indiceAleatorio]
+        baraja[indiceAleatorio] <- cartaTemporal
+    FinPara
     Fin SubProceso
 
     // Subproceso para dar una carta
     SubProceso DarCarta(jugador)
         // Sacar la primera carta de la baraja y dársela al jugador
         // Actualizar el puntaje del jugador
-        // ... (implementación detallada)
+    Definir carta Como Carta
+    carta <- primer elemento de baraja
+    Eliminar primer elemento de baraja
+    Agregar carta a mano del jugador
+    Actualizar puntos del jugador llamando a CalcularValorMano(mano del jugador)
     Fin SubProceso
 
     // Subproceso para calcular el valor de una mano
     SubProceso CalcularValorMano(mano)
         // Sumar los valores de las cartas en la mano
         // Considerar el valor especial de los ases (1 u 11)
-        // ... (implementación detallada)
+SubProceso CalcularValorMano(mano)
+    Definir valorTotal Como Entero <- 0
+    Definir numAses Como Entero <- 0
+
+    Para cada carta En mano Hacer
+        Si valor de carta es As Entonces
+            numAses <- numAses + 1
+            valorTotal <- valorTotal + 11
+        SiNo
+            Si valor de carta es J, Q o K Entonces
+                valorTotal <- valorTotal + 10
+            SiNo
+                valorTotal <- valorTotal + valor de carta
+            FinSi
+        FinSi
+    FinPara
+
+    // Ajustar valor de los Ases si es necesario
+    Mientras valorTotal > 21 Y numAses > 0 Hacer
+        valorTotal <- valorTotal - 10
+        numAses <- numAses - 1
+    FinMientras
+
+    Retornar valorTotal
     Fin SubProceso
 
     // Subproceso para el turno del jugador
