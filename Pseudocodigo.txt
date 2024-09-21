@@ -1,4 +1,4 @@
-Algoritmo Blackjack
+Nombre del Algoritmo: Blackjack
 
     // Variables globales
     Definir baraja Como Vector
