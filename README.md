@@ -3,7 +3,7 @@ Integrantes del equipo H
 
 Angel Garcia Almeyda
 
-Juan Carlos Escamilla Carballo
+
 
 Oscar Manuel Martinez Ruiz
 
