@@ -1,4 +1,4 @@
-# blackjack.cpp
+# blackjack.java
 Integrantes del equipo H
 
 Angel Garcia Almeyda
