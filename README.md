@@ -11,4 +11,4 @@ Jesús David Tejeda Hernández
 
 Lizbeth Guadalupe Segundo Cienega
 
-Descripción: Realizaremos el pseudocódigo del juego Blackjack con las herramientas que vimos en clase, usaremos C++. 
+Descripción: Realizaremos el pseudocódigo del juego Blackjack con las herramientas que vimos en clase, usaremos Java. 
